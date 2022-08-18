@@ -5,14 +5,14 @@ module.exports = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
-      chainId: 1337
-    }
+      chainId: 1337,
+    },
   },
   solidity: "0.8.9",
   settings: {
     optimizer: {
       enabled: true,
-      runs: 200
-    }
-  }
+      runs: 200,
+    },
+  },
 };

@@ -71,18 +71,22 @@ export default function Home() {
     loadNFTs();
   }
   if (loadingState === "loaded" && !nfts.length)
-    return <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>;
+    return (
+      <h1 className="px-20 py-10 text-3xl text-white h-screen bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
+        No items in shop
+      </h1>
+    );
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center h-screen bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
       <div className="px-4" style={{ maxWidth: "1600px" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {nfts.map((nft, i) => (
             <div key={i} className="border shadow rounded-xl overflow-hidden">
               <img src={nft.image} />
-              <div className="p-4">
+              <div className="p-4 bg-black">
                 <p
                   style={{ height: "64px" }}
-                  className="text-2xl font-semibold"
+                  className="text-2xl font-semibold text-white"
                 >
                   {nft.name}
                 </p>
@@ -93,7 +97,7 @@ export default function Home() {
               <div className="p-4 bg-black">
                 <p className="text-2xl font-bold text-white">{nft.price} ETH</p>
                 <button
-                  className="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
+                  className="mt-4 w-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 text-white rounded p-4 shadow-lg text-white font-bold py-2 px-12 rounded"
                   onClick={() => buyNft(nft)}
                 >
                   Buy
